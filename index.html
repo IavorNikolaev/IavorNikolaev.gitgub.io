@@ -1,0 +1,190 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title> CCC (Culturally Connected City) </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+        <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+
+	</head>
+	<body class="is-preload">
+		
+
+
+		<!-- Wrapper -->
+			<div id="wrapper" class="fade-in">
+
+				<!-- Intro -->
+					<div id="intro">
+						<h1>CCC<br />
+						Culturally Connected City</h1>
+						<p>Iavor Nikolaev : z5208788</p>
+						<ul class="actions">
+							<li><a href="#header" class="button icon solo fa-arrow-down scrolly">Continue</a></li>
+						</ul>
+					</div>
+					
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li class="#top"><a href="index.html">Top</a></li>
+							<li><a href="#link1">Mesh blocks</a></li>
+							<li><a href="#link2">Data Journalism</a></li>
+							<li><a href="#link3">G08</a></li>
+							<li><a href="#link4">The Latte Line</a></li>
+							<li><a href="#link5">The data</a></li>
+							<li><a href="#link6">Conclusion</a></li>
+						</ul>
+						
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Featured Post -->
+							<section>
+								<article>
+									<header>
+										
+										<h2><a name='link1'> Sydney and its Diversity </a></h2>
+									</header>
+									<a class="image fit"><img src="images/hands.JPG.png" alt="" /></a>
+									<p> Sydney is currently the most culturally diverse city in Australia and one of the most diverse in the world, with large amounts of the population having direct and generational roots to central Asia, The Middle East, Eastern Europe and Western Europe, but also manages to maintain its large Anglo-Saxon heritage. </p>
+									
+								</article>
+							</section>
+
+						<!-- Posts -->
+						
+							<section>
+								<article>
+									<header>
+										
+										<h2><a name='link2'>Sydney’s Cultural Distribution </a></h2>
+									</header>
+									<a href='https://iavornikolaev.github.io/IavorNikolaev.gitgub.io/?fbclid=IwAR23wPKxReVZFUCYLlUmxW1OLlvOx8gEM_EpzmLylrnktxtrgp6kGZ5GDwg' class="image fit"><img src="images/lltwo.png" alt="" /></a>
+									<p>Despite Sydney’s vast cultural diversity, each sub cultural population tends to segregate itself in a certain district of Sydney’s geography (click on the image above to see a full technical analysis of Sydney’s ethnicity). This is not necessarily a flaw in the attempt to maintain each individual’s cultural heritage but is an inefficient way of sharing and integration of the various cultures in Sydney. Furthermore, Sydney’s latte line has a high correlation with Sydney’s ethnicity as certain ethnic populations tend to either be above or bellow it, which is negative for Sydney’s equality. </p>
+									
+								</article>
+							</section>
+							<section>
+								<article>
+									<header>
+										
+										<h2><a name='link3'> Reimagining the City </a></h2>
+									</header>
+									<a class="image fit"><img src="images/n-01.png" alt="" /></a>
+									<p>As the segregation of ethnicity has a positive influence on the preservation of cultural heritage but has a negative impact on the integration of culture and so economic equality, Sydney needs to adopt a method of connecting its segregated districts together without disrupting their concentration of ethnicity. The diagram above demonstrates a multifaceted network that could possibly connect certain areas together without diluting them. </p>
+									
+								</article>
+							</section>
+							<section>
+								<article>
+									<header>
+										
+										<h2><a name='link4'>How will it Work?</a></h2>
+									</header>
+									<a class="image fit"><img src="images/how-01.png" alt="" /></a>
+									<p>In the centre of districts with high amounts of cultural concentration, a semi napkin ring shaped building will be placed serving as a cultural nucleus. These building will then be connected to super- fast maglev trains that connect the nucli together in a forward fashion and create a network of cultural centres. In this way, culturally concentrated areas will remain segregated, but will become easily accessible, allowing cultural integration. As highlighted In the diagram above the nuclei will have an open public centre, and are wrapped around with buildings congaing commercial, residential and recreational areas, all connected by a two way transportation system. </p>
+
+
+									
+								</article>
+							</section>
+                                <article>
+                                    <header>
+                                        
+                                        <h2><a name='link4'>The Location</a></h2>
+                                    </header>
+									
+<div id='map' style='width: 100%; height: 400px; float: left'></div>
+<script>
+mapboxgl.accessToken = 'pk.eyJ1IjoiaWF2b3JuaWtvbGFldiIsImEiOiJjamxod3Z0cGswNnE2M3FvMDdsNnlrN3hsIn0.3ExcxNHNQFFUlZTaVHtV3w';
+var map = new mapboxgl.Map({
+    container: 'map', // container id
+    style: 'mapbox://styles/mapbox/dark-v9', // stylesheet location
+    center: [151, -34], // starting position [lng, lat]
+    zoom: 9 // starting zoom
+});
+map.on('load', function() {
+
+    map.addLayer({
+        "id": "data",
+        "type": "fill-extrusion",
+        "source": {
+            'type': 'geojson',
+            'data': './attempt.geojson'
+        },
+        'layout': {
+            'visibility': 'visible'
+            },
+        'paint': {
+                'fill-extrusion-color' : {
+                    'property': 'colour',
+                    'type': 'identity'
+                },
+                'fill-extrusion-height' : {
+                    'type': 'identity',
+                    'property': 'height'
+                },
+                'fill-extrusion-base' : {
+                    'type': 'identity',
+                    'property': 'base_height'
+                },
+                 'fill-extrusion-opacity': 0.8
+            }
+
+    });
+});
+
+
+</script>
+									
+									<p> . <br />
+									The example above visualises where the nuclei would could be located. These areas like, Hurstville, Bankstown, Liverpool, North Sydney, black town, Strathfield… have the high concentrations of a specific ethnicity thus could be the holders of a cultural nuclei.   
+									</p>
+									
+								</article>
+								  
+
+             
+</p>
+									
+								</article>
+							</section>
+
+
+						
+							
+
+					</div>
+
+						
+				<!-- Copyright -->
+					<div id="copyright">
+						<ul><li> Iavor Nikolaev</li><li>Z5208788</a></li></ul>
+					</div>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+
+	</body>
+</html>

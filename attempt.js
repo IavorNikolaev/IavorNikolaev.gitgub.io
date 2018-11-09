@@ -1,0 +1,1 @@
+{"type":"FeatureCollection","features":[{"type":"Feature","geometry":{ "type": "Polygon","coordinates": [[[151.08742,-33.9336625],[151.08742,-33.8336625],[151.18742,-33.8336625],[151.18742,-33.9336625],[151.08742,-33.9336625]]]},"properties":{"height":10000,"base_height ":0,"colour":255,255,255}}]}
